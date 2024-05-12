@@ -40,19 +40,19 @@ public class wlwDataController {
         }
     }
 
-//    @GetMapping("/latestData")
-//    @ApiOperation(value = "获取最新一条信息")
-//    public BaseResponse<List<wlwData>> getLatestData(){
-//        LOGGER.info("调用了获取最新数据的接口");
-//        List<wlwData> data=dataService.getLatestData();
-//        if(data!=null && !data.isEmpty()){
-//            LOGGER.info("获取到最新的数据，数据内容是：{}", data);
-//            return ResultUtils.success(data);
-//        }
-//        else{
-//            LOGGER.error("未能获取到数据");
-//            return ResultUtils.error(ErrorCode.NULL_ERROR,"数据没找到","数据是空的");
-//        }
-//    }
+    @GetMapping("/latestData")
+    @ApiOperation(value = "获取最新一条信息")
+    public BaseResponse<List<wlwData>> getLatestData(){
+        LOGGER.info("调用了获取最新数据的接口");
+        List<wlwData> data=dataService.getLatestData();
+        if(data!=null && !data.isEmpty()){
+            LOGGER.info("获取到最新的数据，数据内容是：{}", data);
+            return ResultUtils.success(data);
+        }
+        else{
+            LOGGER.error("未能获取到数据");
+            return ResultUtils.error(ErrorCode.NULL_ERROR,"数据没找到","数据是空的");
+        }
+    }
 
 }
